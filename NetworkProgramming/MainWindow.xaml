@@ -12,5 +12,13 @@
                 Click="ClientServerButton_Click">
             Клиент-серверная архитектура
         </Button>
+        <Button x:Name="HttpButton"
+                Click="HttpButton_Click">
+            Протокол НТТР
+        </Button>
+        <Button x:Name="WebApiButton"
+                Click="WebApiButton_Click">
+            Web-API
+        </Button>
     </StackPanel>
 </Window>

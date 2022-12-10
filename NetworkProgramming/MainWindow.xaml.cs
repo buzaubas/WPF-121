@@ -31,5 +31,19 @@ namespace NetworkProgramming
             new View.ClientServerWindow().ShowDialog();
             this.Show();
         }
+
+        private void HttpButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new View.HttpWindow().ShowDialog();
+            this.Show();
+        }
+
+        private void WebApiButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new View.WebApiWindow().ShowDialog();
+            this.Show();
+        }
     }
 }
