@@ -22,7 +22,7 @@
         </Button>
         <Button x:Name="SmtpButton"
                 Click="SmtpButton_Click">
-            Web-API
+            SMTP
         </Button>
     </StackPanel>
 </Window>
