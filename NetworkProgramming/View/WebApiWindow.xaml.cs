@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -24,6 +25,8 @@ namespace NetworkProgramming.View
     public partial class WebApiWindow : Window
     {
         public ObservableCollection<AssetModel> Assets { get; set; }
+        private System.Windows.Media.Color graphColor;
+        private Random random = new();
 
         public WebApiWindow()
         {
@@ -37,6 +40,11 @@ namespace NetworkProgramming.View
             // DrawLine(10, 10, Graph.ActualWidth-10, Graph.ActualHeight-10);
             
             Task.Run(GetAssets);
+            graphColor = System.Windows.Media.Color.FromArgb(
+                255, 
+                (byte) random.Next(50, 250),
+                (byte) random.Next(50, 250),
+                (byte) random.Next(50, 250));
         }
 
         private async void GetAssets()
@@ -142,7 +150,7 @@ namespace NetworkProgramming.View
                 Y1 = y1,
                 X2 = x2,
                 Y2 = y2,
-                Stroke = Brushes.Tomato,
+                Stroke = new SolidColorBrush(graphColor),
                 StrokeThickness = 2
             });
         }
